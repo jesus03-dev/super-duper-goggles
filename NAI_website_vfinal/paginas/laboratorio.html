@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prueba el simulador interactivo de consultas de NAI.">
+    <title>Laboratorio interactivo | NAI</title>
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+    <button id="botonTema" class="boton-tema" type="button" aria-pressed="false" title="Cambiar entre modo claro y oscuro">🌙 Modo oscuro</button>
+
+    <header>
+        <a href="../index.html"><img class="logo" src="../imagenes/NAI_logo.jpg" alt="NAI - Inicio"></a>
+        <h1>Laboratorio interactivo NAI</h1>
+        <p>Simula cómo gestionaría sus créditos un usuario de inteligencia artificial.</p>
+    </header>
+
+    <main>
+        <section class="bloque destacado">
+            <h2>Panel de prueba</h2>
+            <p>Elige un producto y administra tus consultas. Cada producto tiene un costo diferente
+               y dispones de <strong>30 créditos ficticios</strong> para todos.</p>
+
+            <div class="laboratorio-panel">
+                <div>
+                    <h3>Tu configuración</h3>
+                    <label for="productoElegido">Producto de NAI:</label>
+                    <select id="productoElegido" onchange="cambiarProducto()">
+                        <option value="0">NAI Chat</option>
+                        <option value="1">NAI Code</option>
+                        <option value="2">NAI Vision</option>
+                        <option value="3">NAI API</option>
+                    </select>
+                    <p><label><input type="checkbox" id="cuentaActiva" checked onchange="cambiarCuenta()"> Cuenta activa</label></p>
+                    <p><strong>Usuario:</strong> Estudiante NAI</p>
+                    <p><strong>Producto elegido:</strong> <span id="producto">NAI Chat</span></p>
+                    <p><strong>Costo por consulta:</strong> <span id="costo">2</span> créditos</p>
+                    <p><strong>Precios:</strong> Chat 2 · Code 3 · Vision 5 · API 4 créditos</p>
+                </div>
+
+                <div class="resumen-lab">
+                    <h3>Resumen de créditos</h3>
+                    <p class="numero-lab"><span id="restantes">26</span> <small>/ 30 disponibles</small></p>
+                    <progress id="barra" value="4" max="30" aria-label="Créditos consumidos"></progress>
+                    <p><strong>Consultas del producto elegido:</strong> <span id="consultas">2</span></p>
+                    <p><strong>Consultas en total:</strong> <span id="cantidadTotal">2</span></p>
+                    <p><strong>Créditos utilizados:</strong> <span id="total">4</span></p>
+                    <p><strong>Costo del producto elegido:</strong> <span id="promedio">2</span> créditos por consulta</p>
+                </div>
+            </div>
+
+            <div class="botones-lab">
+                <button type="button" id="agregar" onclick="agregarConsulta()">+ Una consulta</button>
+                <button type="button" id="quitar" onclick="quitarConsulta()">− Una consulta</button>
+                <button type="button" onclick="reiniciar()">Reiniciar prueba</button>
+            </div>
+            <p class="nota-lab" id="mensaje" aria-live="polite">¡Listo! Puedes comenzar a probar NAI Chat.</p>
+        </section>
+
+        <section class="bloque">
+            <h2>Explora los productos NAI</h2>
+            <p>Selecciona NAI Chat, Code, Vision o API en el panel. La simulación
+               actualizará su costo sin recargar la página. Las consultas de cada producto se conservan al cambiar de selección.</p>
+            <p><strong>Estado de tu cuenta:</strong> <span id="estado">Activa · acceso disponible</span></p>
+            <p><strong>Información:</strong> <span id="detalle">Estudiante NAI: 2 consultas en NAI Chat.</span></p>
+            <p class="aclaracion-lab">Esta es una demostración académica: no se realizan consultas reales ni pagos.</p>
+        </section>
+
+        <section class="bloque">
+            <h2>Continúa explorando NAI</h2>
+            <p><a href="propuestas.html">Probar el generador de propuestas</a></p>
+            <p><a href="vision.html">Abrir NAI Vision Studio</a></p>
+            <p><a href="servicios.html">Ver nuestros servicios</a> · <a href="../index.html">Volver al inicio</a></p>
+        </section>
+    </main>
+
+    <footer class="pie"><p>© 2026 NAI - Neural Artificial Intelligence · Proyecto académico</p></footer>
+
+    <!-- JavaScript enlazado al final: el HTML se carga primero. -->
+    <script src="../js/laboratorio.js"></script>
+
+    <script src="../js/tema.js"></script>
+</body>
+</html>
