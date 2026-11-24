@@ -1,0 +1,32 @@
+MODO CLARO Y MODO OSCURO EN NAI
+================================
+
+¿QUÉ SE AGREGÓ?
+Se incorporó un botón en todas las páginas de NAI para alternar entre el modo claro y el modo oscuro. La elección se conserva al navegar entre páginas y al volver a abrir el sitio en el mismo navegador.
+
+ARCHIVOS MODIFICADOS
+- estilos.css: contiene los colores del modo oscuro y el diseño del botón.
+- index.html y las páginas de la carpeta paginas/: incluyen el botón y conectan el archivo JavaScript.
+- js/tema.js: controla el cambio de tema y guarda la preferencia.
+
+¿CÓMO FUNCIONA EL CÓDIGO?
+1. getElementById("botonTema") busca el botón en el HTML.
+2. localStorage.getItem("temaNAI") recupera el tema que se había elegido anteriormente.
+3. classList.add("tema-oscuro") aplica la clase que activa los colores oscuros definidos en CSS.
+4. addEventListener("click", ...) detecta cuando el usuario presiona el botón.
+5. classList.toggle("tema-oscuro") agrega la clase si no existe o la elimina si ya estaba aplicada.
+6. classList.contains("tema-oscuro") comprueba qué tema está activo.
+7. localStorage.setItem("temaNAI", ...) guarda la preferencia para las demás páginas.
+
+¿QUÉ PUEDO DECIR EN LA EXPOSICIÓN?
+"Agregué un botón para cambiar entre el modo claro y el modo oscuro. Con JavaScript detecto el clic del usuario y utilizo classList.toggle para agregar o quitar una clase del body. En CSS definí los colores que se aplican cuando esa clase está activa. También utilicé localStorage para guardar la preferencia, así el tema se mantiene cuando cambio de página o recargo el sitio".
+
+CONCEPTOS QUE DEMUESTRO
+- Eventos: addEventListener("click", ...).
+- Objetos y métodos: document.getElementById(), classList.add(), classList.toggle() y localStorage.getItem()/setItem().
+- Propiedades: textContent y body.classList.
+- Condiciones: if y el resultado verdadero/falso de contains().
+- CSS: selectores de clase para definir ambos temas.
+
+NOTA
+El lienzo de NAI Vision se mantiene blanco para que la imagen que se está editando conserve sus colores y pueda anotarse correctamente. El resto de la interfaz cambia de tema. La preferencia se guarda en el navegador y no se envía a ningún servidor.

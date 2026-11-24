@@ -1,0 +1,96 @@
+NAI · APLICACIONES DE JAVASCRIPT · MATERIAL DEL CAPÍTULO 14
+===========================================================
+
+QUÉ SE INCORPORÓ
+Se eligieron dos aplicaciones del material adjunto porque encajan con los productos
+que ya existen en NAI:
+
+1. NAI VISION STUDIO (página nueva: paginas/vision.html)
+   - Permite seleccionar una imagen desde el dispositivo.
+   - FileReader lee el archivo en el navegador; no se envía a un servidor.
+   - Canvas muestra la imagen y permite dibujar anotaciones encima.
+   - El usuario puede cambiar color y grosor del trazo.
+   - Puede restaurar la imagen original y descargar el resultado como PNG.
+   - Se inspira en los ejemplos de FileReader, Canvas, dibujo con el puntero y guardado
+     de imágenes del capítulo 14 (Exercise_14.1, Exercise_14.5, Exercise_14.7 y Project_3).
+
+2. HISTORIAL LOCAL DE PROPUESTAS (páginas/propuestas.html)
+   - Las últimas cinco propuestas se guardan en localStorage.
+   - Al volver a abrir la página, se recuperan con getItem() y JSON.parse().
+   - Se guardan con setItem() y JSON.stringify().
+   - El botón «Borrar historial guardado» utiliza removeItem().
+   - También se actualizan en el historial el estado y la prioridad de la propuesta.
+   - Se inspira en Code Samples/ch14-localstorage.html.
+
+ARCHIVOS NUEVOS O MODIFICADOS
+- paginas/vision.html: nueva interfaz de NAI Vision Studio.
+- js/vision.js: lectura de imágenes, Canvas, dibujo y descarga PNG.
+- paginas/propuestas.html: apartado de historial local.
+- js/capitulo3.js: guardar, cargar, actualizar y borrar el historial.
+- estilos.css: estilos de la nueva herramienta y del historial.
+- index.html, paginas/servicios.html y paginas/laboratorio.html: enlaces para acceder
+  a NAI Vision Studio.
+
+CÓMO PROBAR NAI VISION STUDIO
+1. Abre index.html y entra a «NAI Vision Studio».
+2. Selecciona una imagen desde tu dispositivo (máximo 8 MB).
+3. Elige el color y el grosor del trazo.
+4. Dibuja sobre la imagen con el mouse, lápiz o pantalla táctil.
+5. Usa «Restaurar imagen» para quitar las anotaciones.
+6. Usa «Descargar como PNG» para guardar el resultado.
+
+CÓMO PROBAR EL HISTORIAL LOCAL
+1. Abre «Generador de propuestas NAI».
+2. Genera una propuesta.
+3. Verifica que aparezca en «Historial de propuestas».
+4. Recarga la página: el historial debe conservarse en el mismo navegador.
+5. Marca una propuesta como revisada o añade prioridad: el historial refleja el cambio.
+6. Pulsa «Borrar historial guardado» para eliminar los registros locales.
+
+CONCEPTOS QUE PUEDO EXPLICAR
+- FileReader: permite leer archivos seleccionados por el usuario.
+- readAsDataURL(): transforma el archivo en una dirección de datos que puede usar Image.
+- Canvas: área de dibujo de HTML5.
+- getContext("2d"): obtiene las herramientas para dibujar.
+- beginPath(), moveTo(), lineTo() y stroke(): construyen y pintan trazos.
+- toDataURL("image/png"): convierte el lienzo en una imagen PNG.
+- localStorage: guarda información en el navegador incluso después de cerrar o recargar
+  la página, hasta que se elimine.
+- setItem(), getItem() y removeItem(): guardan, leen y eliminan datos.
+- JSON.stringify() y JSON.parse(): convierten arreglos/objetos a texto y los recuperan.
+- addEventListener(): ejecuta acciones cuando ocurre un evento, como change, pointerdown,
+  pointermove o click.
+
+GUION BREVE PARA EXPONER
+«Añadí NAI Vision Studio porque está relacionado con nuestro producto NAI Vision. El
+usuario puede cargar una imagen y el navegador la lee mediante FileReader. Después la
+muestro en un Canvas, donde puedo dibujar usando eventos del puntero, cambiar el color y
+el grosor del trazo y descargar el resultado como PNG. La imagen se procesa localmente.
+También mejoré el generador de propuestas: ahora guardo las últimas cinco solicitudes
+con localStorage. Utilizo setItem para guardarlas, getItem para recuperarlas y
+removeItem para borrar el historial. Así, los datos permanecen en el navegador al
+recargar la página, sin utilizar una base de datos ni un servidor.»
+
+PREGUNTAS QUE PODRÍA HACER EL PROFESOR
+1. ¿Qué es Canvas? Es un elemento HTML que permite dibujar mediante JavaScript.
+2. ¿Qué hace getContext("2d")? Obtiene el contexto con las funciones de dibujo en 2D.
+3. ¿Para qué sirve FileReader? Para leer un archivo elegido desde el dispositivo del usuario.
+4. ¿La imagen se sube a un servidor? No; se lee y procesa en el navegador.
+5. ¿Qué hace toDataURL()? Convierte el contenido del Canvas en una dirección de datos,
+   que en este proyecto se descarga como PNG.
+6. ¿Qué es localStorage? Es un almacenamiento del navegador que conserva datos entre visitas.
+7. ¿Qué diferencia hay entre setItem y getItem? setItem guarda; getItem recupera.
+8. ¿Para qué uso JSON.stringify y JSON.parse? Para convertir el historial a texto y volver
+   a convertirlo en un arreglo de objetos.
+9. ¿Los créditos o propuestas se envían a NAI? No; son datos ficticios guardados localmente.
+10. ¿Por qué no implementé geolocalización? No es necesaria para las funciones de NAI y
+    pedir la ubicación del usuario no aportaría valor a esta demostración.
+
+NOTA
+El laboratorio y las propuestas siguen siendo simulaciones académicas. NAI Vision Studio
+permite anotar imágenes, pero no realiza reconocimiento ni análisis mediante IA real.
+
+
+MEJORA ADICIONAL: MODO CLARO Y MODO OSCURO
+------------------------------------------
+Se agregó un botón común a todas las páginas para alternar el fondo claro y oscuro. El archivo js/tema.js detecta el clic, utiliza classList.toggle("tema-oscuro") y guarda la preferencia con localStorage.setItem(). Al abrir otra página, recupera la elección mediante localStorage.getItem(). Los estilos del tema oscuro están al final de estilos.css. La guía GUIA_MODO_CLARO_OSCURO.txt explica esta mejora paso a paso.

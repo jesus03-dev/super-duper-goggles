@@ -1,0 +1,303 @@
+/* NAI - estilos de CSS */
+body {
+    font-family: Arial, Verdana, sans-serif;
+    background-color: #eef5fb;
+    color: #243447;
+    margin: 0;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #001838;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 260px;
+    height: auto;
+}
+
+.eslogan {
+    font-size: 18px;
+}
+
+.presentacion {
+    background-color: #5dd1ff;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.video {
+    width: 90%;
+    max-width: 848px;
+    height: auto;
+}
+
+.chatbot-contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.chatbot-contenedor img {
+    width: 340px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+.bloque {
+    background-color: white;
+    border: 1px solid #c6d4e1;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.destacado {
+    border: 2px solid #2196f3;
+}
+
+h2 {
+    color: #1565c0;
+}
+
+h3 {
+    color: #0b1f3a;
+}
+
+a {
+    color: #1565c0;
+}
+
+.cita {
+    background-color: #eef7ff;
+    border-left: 4px solid #2196f3;
+    padding: 10px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th {
+    background-color: #1565c0;
+    color: white;
+}
+
+.tabla th,
+.tabla td {
+    border: 1px solid #9fb3c8;
+    padding: 8px;
+}
+
+.mapa-iframe {
+    width: 100%;
+    max-width: 850px;
+}
+
+form {
+    background-color: #f7fbff;
+    padding: 15px;
+}
+
+fieldset {
+    border: 1px solid #c6d4e1;
+    margin-bottom: 15px;
+}
+
+legend {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+button {
+    background-color: #1565c0;
+    color: white;
+    border: 0;
+    padding: 10px 18px;
+}
+
+.pie {
+    background-color: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.pie a {
+    color: #9dd7ff;
+}
+
+/* Laboratorio del capítulo 2: reglas sencillas que mantienen el estilo NAI */
+.botones-lab { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+.botones-lab button { cursor: pointer; border-radius: 5px; }
+.botones-lab button:hover { background-color: #0b1f3a; }
+.nota-lab { background-color: #eef7ff; padding: 12px; border-left: 4px solid #1565c0; }
+code { background-color: #eef5fb; padding: 2px 5px; }
+
+/* Laboratorio NAI: panel y elementos interactivos sencillos */
+.laboratorio-panel { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+.laboratorio-panel > div { flex: 1; min-width: 230px; padding: 16px; background: #f3f9ff; border: 1px solid #d1e5f8; }
+.laboratorio-panel h3 { margin-top: 0; }
+.laboratorio-panel select { display: block; width: 100%; padding: 10px; margin: 10px 0; }
+.numero-lab { color: #1565c0; font-size: 32px; font-weight: bold; margin: 8px 0; }
+.numero-lab small { color: #536b80; font-size: 14px; font-weight: normal; }
+.resumen-lab progress { width: 100%; height: 16px; accent-color: #1565c0; }
+.botones-lab button:disabled { background-color: #9baebf; cursor: not-allowed; }
+.aclaracion-lab { color: #536b80; font-size: 14px; }
+
+/* Capítulo 3: generador de propuestas NAI */
+.propuesta-formulario { display: flex; flex-wrap: wrap; gap: 16px; margin: 18px 0; }
+.propuesta-formulario > div { flex: 1; min-width: 190px; }
+.propuesta-formulario label { display: block; font-weight: bold; margin-bottom: 7px; color: #0b1f3a; }
+.propuesta-formulario input,
+.propuesta-formulario select { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #9fb3c8; border-radius: 4px; background: white; }
+.propuesta-resumen { background: #f3f9ff; border: 1px solid #d1e5f8; padding: 14px 18px; margin: 16px 0; }
+.propuesta-resumen p { margin: 8px 0; }
+.propuesta-resumen span { color: #1565c0; }
+.botones-lab button:disabled { background-color: #9baebf; cursor: not-allowed; }
+
+
+/* Capítulo 14: NAI Vision Studio con Canvas y carga de imágenes */
+.vision-controles { display: flex; flex-wrap: wrap; align-items: end; gap: 18px; margin: 18px 0; }
+.vision-controles > div { min-width: 150px; }
+.vision-controles input[type="file"] { max-width: 260px; margin-top: 8px; }
+.vision-controles input[type="color"],
+.vision-controles input[type="range"] { margin-top: 8px; }
+.vision-lienzo { background: #ffffff; border: 1px solid #9fb3c8; padding: 8px; overflow: auto; }
+#canvasVision { display: block; width: 100%; height: auto; background: #ffffff; touch-action: none; }
+.historial-lista { list-style: none; padding: 0; margin: 14px 0; }
+.historial-lista li { background: #f3f9ff; border-left: 4px solid #1565c0; border: 1px solid #d1e5f8; padding: 12px; margin-bottom: 10px; overflow-wrap: anywhere; }
+.historial-lista p { margin: 6px 0 0; color: #536b80; }
+
+
+/* Botón común para cambiar el tema en todas las páginas de NAI */
+.boton-tema {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1000;
+    border: 1px solid #9dd7ff;
+    border-radius: 24px;
+    padding: 11px 17px;
+    background-color: #0b1f3a;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+}
+
+.boton-tema:hover {
+    background-color: #1565c0;
+}
+
+/* Colores para el modo oscuro */
+body.tema-oscuro {
+    background-color: #101b2b;
+    color: #e7eef7;
+}
+
+body.tema-oscuro .bloque {
+    background-color: #17283d;
+    border-color: #344b64;
+}
+
+body.tema-oscuro .presentacion {
+    background-color: #123b5a;
+    color: #f2f8ff;
+}
+
+body.tema-oscuro h2 {
+    color: #78c2ff;
+}
+
+body.tema-oscuro h3,
+body.tema-oscuro .propuesta-formulario label {
+    color: #c5e3ff;
+}
+
+body.tema-oscuro a {
+    color: #82caff;
+}
+
+body.tema-oscuro .cita,
+body.tema-oscuro .nota-lab,
+body.tema-oscuro code {
+    background-color: #203a55;
+    color: #e7eef7;
+}
+
+body.tema-oscuro form,
+body.tema-oscuro .laboratorio-panel > div,
+body.tema-oscuro .propuesta-resumen,
+body.tema-oscuro .historial-lista li {
+    background-color: #1c3048;
+    border-color: #3a5875;
+    color: #e7eef7;
+}
+
+body.tema-oscuro .historial-lista p,
+body.tema-oscuro .aclaracion-lab,
+body.tema-oscuro .numero-lab small {
+    color: #b8c9dc;
+}
+
+body.tema-oscuro .propuesta-formulario input,
+body.tema-oscuro .propuesta-formulario select,
+body.tema-oscuro input,
+body.tema-oscuro select,
+body.tema-oscuro textarea {
+    background-color: #102238;
+    color: #f0f6ff;
+    border-color: #54718e;
+}
+
+body.tema-oscuro fieldset {
+    border-color: #54718e;
+}
+
+body.tema-oscuro legend {
+    color: #82caff;
+}
+
+body.tema-oscuro .tabla td {
+    background-color: #17283d;
+    color: #e7eef7;
+    border-color: #49627b;
+}
+
+body.tema-oscuro .vision-lienzo {
+    background-color: #203a55;
+    border-color: #54718e;
+}
+
+body.tema-oscuro .boton-tema {
+    background-color: #d9efff;
+    color: #0b1f3a;
+    border-color: #ffffff;
+}
+
+body.tema-oscuro .boton-tema:hover {
+    background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .boton-tema {
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 14px;
+    }
+}

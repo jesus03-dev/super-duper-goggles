@@ -1,0 +1,52 @@
+NAI · LABORATORIO INTERACTIVO · CAPÍTULOS 1 Y 2
+=================================================
+
+ABRIR: index.html > Entrar al laboratorio de NAI.
+
+NUEVO: CADA PRODUCTO TIENE SU PROPIO COSTO
+- NAI Chat: 2 créditos por consulta.
+- NAI Code: 3 créditos por consulta.
+- NAI Vision: 5 créditos por consulta.
+- NAI API: 4 créditos por consulta.
+- El presupuesto inicial es de 30 créditos ficticios.
+- Cada producto guarda su propio número de consultas.
+- Al cambiar de producto, no se recalculan a otro precio las consultas anteriores.
+- El total consumido suma (consultas × costo) de cada producto.
+- No es posible gastar más créditos de los que quedan.
+- El botón para quitar consultas funciona para el producto seleccionado.
+- Cuenta pausada desactiva las operaciones y Reiniciar restaura los valores.
+- No existen pagos ni peticiones reales a una IA.
+
+CAPÍTULO 1: OBJETOS, PROPIEDADES, MÉTODOS Y EVENTOS
+- document es un objeto del navegador.
+- getElementById() permite localizar un elemento del HTML.
+- textContent, value, checked y disabled son propiedades.
+- onclick y onchange detectan la interacción con botones y el selector.
+- JavaScript externo: js/laboratorio.js, enlazado al final del HTML.
+
+CAPÍTULO 2: VARIABLES, ARREGLOS Y OPERADORES
+- productos = ["NAI Chat", "NAI Code", "NAI Vision", "NAI API"]
+- costos = [2, 3, 5, 4]
+- consultas = [2, 0, 0, 0]
+- Los arreglos están coordinados por posición: 0 es NAI Chat, etc.
+- El operador * calcula consumo; + suma; >= comprueba saldo suficiente.
+- El operador && combina requisitos: cuenta activa y créditos disponibles.
+- ++ y -- agregan o quitan una consulta.
+- Un bucle for suma lo consumido por los cuatro productos.
+
+GUION BREVE PARA EXPONER
+«En el laboratorio, cada servicio de NAI cuesta una cantidad distinta de
+créditos. Para implementarlo utilicé tres arreglos: uno para los nombres,
+otro para los costos y otro para las consultas realizadas. Comparten la misma
+posición, así que NAI Chat está en la posición cero. Con un ciclo for sumo
+los créditos utilizados por todos los productos. Antes de agregar una
+consulta verifico que la cuenta esté activa y que haya saldo suficiente.
+Actualizo los valores de la página con getElementById y textContent.»
+
+PREGUNTAS POSIBLES
+1. ¿Por qué tres arreglos? Para relacionar nombre, costo y consultas por índice.
+2. ¿Por qué no multiplicar todas las consultas por el precio actual?
+   Porque las consultas de otros productos tienen precios diferentes.
+3. ¿Qué hace for? Recorre cada producto y acumula su consumo.
+4. ¿Qué hace >=? Verifica que el saldo alcance para la siguiente consulta.
+5. ¿Se gastan créditos reales? No, todo es una simulación académica.
